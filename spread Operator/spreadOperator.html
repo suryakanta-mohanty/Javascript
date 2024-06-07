@@ -63,4 +63,27 @@
   }
 
   // 
+
+  console.log([...'Hello😉']);  // ['H', 'e', 'l', 'l', 'o', '😉']
+  console.log('Hello😉'.split(''));   //  ['H', 'e', 'l', 'l', 'o', '\uD83D', '\uDE09']
+
+  //
+  // `function *test() { ... }` is a generator function. Generator functions are special types 
+  // of functions that can pause their execution and later resume from where they left off.
+  function *test(){
+    yield 'first'
+    yield 'second'
+    yield 'third'
+  }
+
+  // const value = [...test()]; // first second third
+  // value.forEach(value => console.log(value, typeof value));
+  console.log([...test()]); // ['first', 'second', 'third']
+
+  //
+  
+
+  
+  
+
 </script>
