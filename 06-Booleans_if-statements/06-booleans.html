@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booleans</title>
+</head>
+<body>
+  
+
+
+  <script>
+
+    /*
+    // console.log(typeof true);
+    false
+
+    console.log(3 > 5 - 5);
+
+    console.log('3.00' === 3);
+
+    if (false){
+      console.log('hello');
+    } else{
+      console.log('else');
+    }
+
+    const age = 15;
+
+    if(age >= 18){
+      console.log('you can drive!');
+       
+    } else if (age >= 30) {
+      console.log('yess');
+    } else {
+      console.log("You can't drive ");
+    } 
+    */
+
+    /*
+    console.log(true && false);
+    console.log(0.2 >= 0 && 0.2 < 1 / 3); // ' 1 / 3 ' is the 1 3rd
+
+    console.log(true || false);
+
+    console.log(!true);
+    */
+
+    if(5){
+      console.log('truthy');
+    }
+
+    if(0){
+      console.log('falsy'); // it won't be execute
+    }
+
+    console.log('text'/5); // NaN - this operation will not be executed.
+
+    let variable;
+    console.log(variable); // undfined - it doesn't have a value.
+
+    const result= true ? 'truthy' : 'falsy'; // torniary operator
+    console.log(result);
+
+    false && console.log('hello'); // short-circuit operator or guared operator
+
+    const message = false && 'hello';
+    console.log(message); // false
+
+    
+    /*const message2 = 5 && false;
+    console.log(message2); // false */
+    
+    const message2 = 5 && 'hello';
+    console.log(message2); // 'hello'
+
+    const currency = 'EUR' || 'USD';
+    console.log(currency); // 'EUR' and the 'USD' is the default operator.
+    
+    /*const currency = 0 || 'USD';
+    console.log(currency); // 'usd' */
+
+
+
+  </script>
+</body>
+</html>

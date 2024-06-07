@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>exercies</title>
+</head>
+<body>
+  <script>
+    // 8a.
+
+    const buying ={
+      name: 'basketball',
+      price: 2095
+    };
+
+    console.log(buying);
+    console.log(buying.name);
+
+    //8b.
+
+    buying.price += 500;
+    console.log(buying);
+    console.log(buying.price);
+
+    // 8c.
+
+    buying['delivery-time'] = '3 days';
+    console.log(buying);
+
+    // 8d.
+
+    const product1 = {
+      name: 'basketball 1',
+      price: 799
+    };
+
+    const product2 = {
+      name: 'basketball 2',
+      price: 1080
+    };
+
+    function comparePrice(product1, product2){
+      if(product1.price < product2.price){
+        return product1;
+      } else{
+        return product2;
+      }
+    }
+
+    console.log(comparePrice(product1, product2));
+
+    // 8e.
+
+     const product3 = product2;
+
+     function isSameProduct(product2, product3){
+      if(product2.name === product3.name && product3.price === product2.price){
+        console.log(true);
+      }
+      else{
+        console.log(false);
+      }
+     }
+
+     isSameProduct(product2, product3);
+
+     // 8f.
+
+     console.log('GOOD MORNING'.toLowerCase());
+
+     // 8g.
+     console.log('hello'.repeat(2));  // hellohello
+
+     // 8h.
+     
+  </script>
+</body>
+</html>

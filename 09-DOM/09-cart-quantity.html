@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Quantity</title>
+</head>
+<body>
+  <p>Cart Quantity</p>
+
+  <button onclick="showCart()">Show Quantity</button>
+
+  <button onclick="updateCartQuantity()">Addd to Cart</button>
+
+  <button onclick="updateCartQuantity(2)">+2</button>
+
+  <button onclick="updateCartQuantity(3)">+3</button>
+
+  <button onclick="resetCart()">Reset cart</button>
+
+  <p class="js-cart"></p>
+
+  <script>
+    let cartQuantity = 0;
+    document.querySelector('.js-cart').innerHTML = `Cart Quantity: ${cartQuantity}`;
+
+    function updateCartQuantity(Quantity = 1){
+
+      if(cartQuantity >= 10){
+        document.querySelector('.js-cart').innerHTML = `Cart is full !`;
+        return;   // this is called early return.
+      }
+      
+      cartQuantity+= Quantity;
+      document.querySelector('.js-cart').innerHTML = `Cart Quantity: ${cartQuantity}`;
+
+    }
+
+    function resetCart(){
+      cartQuantity = 0;
+      document.querySelector('.js-cart').innerHTML = `Cart Quantity: ${cartQuantity}`;
+    }
+
+    function showCart(){
+      document.querySelector('.js-cart').innerHTML = `Cart Quantity: ${cartQuantity}`;
+    }
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>update Coin Flip Game</title>
+</head>
+<body>
+
+  <button onclick="playGame('head')">Head</button>
+  <button onclick="playGame('tail')">Tail</button>
+  <button onclick="reset()" >Reset</button>
+
+  <script>
+
+    let score = JSON.parse(localStorage.getItem('score')) || {
+      wins: 0,
+      loses: 0
+    };
+
+    let whowins;
+
+    function playGame(guess){
+      const randomNumber = Math.random();
+      const result = randomNumber < 0.5 ? 'head' : 'tail';
+
+      // console.log(guess === result ? 'you win!' : 'you lose!');
+      if(guess === result){
+        whowins = 'you win !';
+        score.wins += 1;
+      } else{
+        whowins = 'you lose !';
+        score.loses += 1;
+      }
+
+      localStorage.setItem('score', JSON.stringify(score));
+
+      alert(`You have chosse: ${guess} & the computer have chosse: ${result}.\n\n${whowins} \n\nWins: ${score.wins}  & Loses: ${score.loses}`);
+    }
+
+    function reset(){
+      score.wins = 0;
+      score.loses = 0;
+      localStorage.removeItem('score');
+      alert(`The score box has reseted!\n\nWins: ${score.wins} & Loses: ${score.loses}`);
+    }
+
+  </script>
+</body>
+</html>

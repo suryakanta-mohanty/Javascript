@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  
+
+  <script>
+    /*
+    const product = {   // here product is the object.
+      name: 'socks',    // property : value
+      price: 1090
+    };
+    */
+    /* Object - Let us group multiple values together. Let us use multiple values together. */
+    /*
+    console.log(product);
+    console.log(typeof product);  // object
+    console.log(product.name);
+    console.log(product.price);
+
+    product.name = 'cotton socks';
+    console.log(product.name);
+    console.log(product);
+
+
+    // adding new property to the object.
+
+    product.newProperty = true;
+    console.log(product);
+
+    // removing a property from the object
+
+    delete product.newProperty;
+    console.log(product);
+
+    */
+
+    const product2 ={
+      // inside an object we can save any type of value.
+      name: 'Surya',
+      ['delivery-time']: '1 Day',
+      
+      // nested object
+      rating: {
+        stars: 4.5,
+        count: 87
+      },
+
+      // we can add functions as a values.
+
+      fun: function function1(){
+        console.log("function inside an object.");
+      }
+    };
+
+    console.log(product2);
+
+    // this two blow code will give the same output.
+    console.log(product2.name);
+    console.log(product2['name']);  // this called bracket notation.
+    
+    /* Bracket Notation - lets us use properties that don't work with dot notation. */
+
+    // console.log(product2.delivery-time);  // it will give an error, because js will think this " - " as subtraction sign.
+    // so, we need to use bracket notation.
+
+    console.log(product2['delivery-time']); 
+
+    /* which one should we use?
+      - use dot notation y default
+      - for properties that don't work, use bracket notation.
+     */
+
+     // for accessing the nested object
+
+     console.log(product2.rating.count);   // 87
+
+     product2.fun();  // function inside an object.
+
+     /* console.log - The 'console' is the object, and the 'log' is the property(function) saved inside the console object. 
+        these are bulit-in object. other example like - Math.random()*/
+
+     console.log(typeof console); // object
+     console.log(typeof console.log); // function
+
+    
+
+  </script>
+</body>
+</html>

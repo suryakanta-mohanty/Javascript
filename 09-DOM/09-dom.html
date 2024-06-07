@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM - Document Object Model</title>
+</head>
+<body>
+  <button>Hello</button>
+  <button class="js-btn">Second Button</button>
+
+  <script>
+    /*
+    document.body.innerHTML = 'hello';
+    document.title = 'Good Job';  
+    */
+   /*
+    console.log(document.title);
+   document.titel = "Good Job!";
+
+   console.log(document.body);
+   console.log(typeof document.body); // object
+
+   console.log(document.body.innerHTML);
+   
+   document.body.innerHTML = 'changed';
+
+   document.body.innerHTML = '<button>Good Job</button>';  // it create a button on the web page.
+
+    */ 
+   
+    /* querySelector() - let us get any element from the page and put it inside javascript */
+   console.log(document.querySelector('button')); // <button>Hello</button>
+   
+   console.log(document.querySelector('button').innerHTML ); // Hello
+   
+   console.log(document.querySelector('button').innerHTML = 'changed' ); 
+
+   // class selector
+    console.log(document.querySelector('.js-btn')); // <button class="js-btn">Second Button</button>
+
+    /* For the best we should give class name start with 'js' that will use in javascript*/
+
+    // html elements are js object. And object are variable
+
+    const btnElement = document.querySelector('.js-btn');
+    console.log(btnElement); // <button class="js-btn">Second Button</button>
+
+    
+
+
+
+  </script>
+</body>
+</html>

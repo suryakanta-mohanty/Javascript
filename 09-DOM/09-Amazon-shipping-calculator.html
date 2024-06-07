@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon shipping calculator</title>
+</head>
+<body>
+  <p>Amazon Shipping Calculator</p>
+  <p>Order under $40 = +$10 shipping.</p>
+  <p>Order over $40 = FREE shipping.</p>
+
+  <input type="number" class="input-box" onkeydown="handleCostKeydown(event)" placeholder="cost of the order" min="0">
+  <button onclick="calculate()" >Claculate</button>
+
+  <p class="js-result"></p>
+
+  <script>
+    /*
+    console.log(String(25));
+    console.log('25' - 5);   // 20  -> it is not recommended
+    console.log('25' + 5);  // 255
+    */  
+
+    const inputBox = document.querySelector('.input-box');
+
+    let result;
+
+    function calculate(){
+      if(inputBox.value === ''){
+        alert('You must add something!!!');
+
+      }else{
+        if(inputBox.value <= 40){
+          result = Number(inputBox.value) + 10;   // Number() - it converts string to number -> it's recommended.
+          // console.log(result);
+          // console.log(typeof result);
+          document.querySelector('.js-result').innerHTML = `$${result}`;
+
+        }else{
+          document.querySelector('.js-result').innerHTML = `$${inputBox.value}`;
+        }
+
+        inputBox.value = '';
+      }
+    }
+
+    function handleCostKeydown(event){
+      if(event.key === 'Enter'){
+        calculate();
+      }
+    }
+  </script>
+</body>
+</html>

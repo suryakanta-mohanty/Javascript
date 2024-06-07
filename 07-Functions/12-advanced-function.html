@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Function</title>
+</head>
+<body>
+  
+  <script>
+
+    /*
+    // this method of function have advantages:
+    // 1. Easier to read.
+    // 2. Hoisting - it doesn't matter what order the function should call.
+
+    function greeting(){
+      console.log('hello');
+    }
+
+    greeting();
+
+    
+    // functions are values - we can save a function inside a variable.
+    // here the Hoisting concept doesn't work.
+
+    const function1 = function greeting(){
+      console.log('Hello');
+    };
+
+    console.log(function1);
+    console.log(typeof function1);  // function
+    
+    // to access the function we need the variable.
+    function1(); // hello 
+
+    // Anonymous Function - function without a name
+    const function2 = function(){
+      console.log('Hello');
+    };
+
+    // What else can we do with a values?
+    // - save a value in an object.
+
+    const object1 = {
+      num: 2,
+      fun: function(){       // function name doesn't need here
+        console.log('WhatsUp');
+      }
+    };
+
+    object1.fun();  // WhatsUp
+
+    function display(param){
+      console.log(param);
+    }
+    display(2);
+
+    // we can also pass a function into a function.
+    function run(param){
+      param();
+    }
+
+    run(function(){    // this is called call-back function.
+      console.log('function inside a function');
+    });
+
+    */
+
+    /*
+    // setTimeout() - allows us to run a function in the future.
+    // it's a built-in function.
+
+    // it takes tow parameter:
+    // 1. the function
+    // 2. how long to wait before running this function. (a number in millisecond = 1 second)
+
+    setTimeout(function(){
+      console.log('timeOut');
+      console.log('timeOut2');
+    }, 3000);
+
+    // Asynchronous Code - won't wait for a line to finish before going to the next line.
+    console.log('Next Line');
+    //first the 'Next Line' will execute and after 3s the funtion will execute 'timeOut'.
+
+
+    // Synchronous Code - will wait for one line to finish before going to the next line.
+    // ex- code inside the function.
+
+    //setInterval() - this function will keep running with given time interval.
+
+    setInterval(function(){
+      console.log('interval');
+    }, 3000);
+
+    console.log('next line 2');
+    */ 
+
+
+    // forEach loop
+    [
+      'make me dinner',
+      'wash dishes',
+      'watch you tube'
+    ].forEach(function(value, index){
+
+      if(value === 'wash dishes'){
+        return;   // skip the step in the forEach and does the same thing as continue.
+      }
+        console.log(index);
+        console.log(value);
+    });
+
+    
+
+
+
+  </script>
+</body>
+</html>

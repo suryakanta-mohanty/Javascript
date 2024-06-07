@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Built-in objects</title>
+</head>
+<body>
+
+  <script>
+    /* JSON - JavaScript Object Notation
+       - a syntax
+       - similar to javascript object
+       - but has less features
+      
+       We us JSON 
+       - when we send data between computers
+       - when we stores data.
+    */
+
+
+    // javascript object syntax.
+
+    const product2 ={
+      // inside an object we can save any type of value.
+      name: 'Surya',
+      ['delivery-time']: '1 Day',
+      
+      // nested object
+      rating: {
+        stars: 4.5,
+        count: 87
+      },
+
+      // we can add functions as a values.
+
+      fun: function function1(){
+        console.log("function inside an object.");
+      }
+    };
+
+    console.log(product2);
+
+    // JSON object syntax
+
+    // JSON.stringify(product2);  // 'stringify is the method of JSON object.'
+
+    console.log(JSON.stringify(product2));
+    /* the out put
+    
+      {
+        "name":"Surya",
+        "delivery-time":"1 Day",
+        "rating":{
+          "stars":4.5,
+          "count":87
+        }
+      }
+      
+      the function isn't present here, becasue the JSON object doesn't support function.
+    */
+
+    console.log( typeof JSON.stringify(product2));  // string
+
+
+    /* converting JSON to Javascript */
+
+    const jsonString = JSON.stringify(product2);
+    console.log(JSON.parse(jsonString));  // 'JSON.parse()' will convert JSON to javascript.
+
+
+    /* localStorage 
+       - save values more permanently
+    */
+
+    
+
+
+
+  </script>
+</body>
+</html>

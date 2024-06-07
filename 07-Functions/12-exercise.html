@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App</title>
+</head>
+<body>
+  <button class="js-btn">start</button>
+
+  <button class="add-to-cart-btn">Add to Cart</button>
+  <p class="js-message"></p>
+
+  <button class="js-add-btn">Add</button>
+  <button class="js-remove-btn">Remove</button>
+
+
+
+  <script>
+    // a
+    // const add = function (){
+    //   console.log(2 + 3);
+    // }
+    
+    const add =() => {
+      console.log(2 + 3);
+    }
+
+    add();
+
+    //b
+    function runTwice(fun){
+      fun();
+      fun();
+    }
+
+    runTwice(function() {console.log('12b');}); 
+    runTwice(add);
+
+    // c - d
+    document.querySelector('.js-btn').addEventListener('click', ()=>{
+      document.querySelector('.js-btn').innerHTML = 'loading...';
+      setTimeout(()=>{
+        // console.log('1s');
+        document.querySelector('.js-btn').innerHTML = 'finnsed';
+      }, 1000);
+    });
+
+    //e
+    /*
+    const addToCart = document.querySelector('.add-to-cart-btn');
+    addToCart.addEventListener('click', ()=>{
+      document.querySelector('.js-message').innerHTML = 'Add to Cart';
+      setTimeout(()=>{
+        document.querySelector('.js-message').innerHTML = '';
+        setTimeout(()=>{
+          document.querySelector('.js-message').innerHTML = 'done';
+          setTimeout(()=>{
+            document.querySelector('.js-message').innerHTML = '';
+          },1000);
+        }, 500);
+      }, 1000);
+    });
+    */
+
+    // f
+    let timeoutId;
+    const addToCart = document.querySelector('.add-to-cart-btn');
+    addToCart.addEventListener('click', ()=>{
+      document.querySelector('.js-message').innerHTML = 'Added';
+      clearTimeout(timeoutId);
+
+      timeoutId = setTimeout(() =>{
+        document.querySelector('.js-message').innerHTML = '';
+
+      }, 2000);
+    });
+
+    /*
+
+    // g
+    // let count = 0;
+    // setInterval(() =>{
+    //   count++;
+    //   document.title = `(${count}) New Messages`;
+    // }, 1000);
+
+    setInterval(() => {
+      if(document.title === 'App'){
+        document.title = '(2) New Messages';
+
+      }else{
+        document.title = 'App';
+      }
+    }, 1000);
+
+    */
+
+    /*
+    // h
+    let count = 0;
+    
+    const addBtn = document.querySelector('.js-add-btn');
+    const removeBtn = document.querySelector('.js-remove-btn');
+
+    addBtn.addEventListener('click', () =>{
+      count++;
+      setInterval(() =>{
+        if(document.title === 'App'){
+          if(count > 0){
+            document.title = `(${count}) New Messages`;
+
+          }
+
+        }else{
+          document.title = 'App';
+        }
+      }, 1000);
+    });
+
+
+    removeBtn.addEventListener('click', ()=>{
+      count--;
+      if(document.title === 'App'){
+        if(count > 0){
+          document.title = `(${count} New Message)`;
+
+        }
+
+      }else{
+        document.title = 'App';
+      }
+    });
+    */
+
+    // Another way
+    let message = 0;
+    document.querySelector('.js-add-btn').addEventListener('click', ()=>{
+      message++;
+
+      displayNotification();
+    });
+
+    let isDisplayNotification ;
+    let intervalId;
+
+    function displayNotification(){
+
+      if(isDisplayNotification){
+        return;
+      }
+
+      isDisplayNotification = true;
+
+      intervalId = setInterval(()=>{
+        if(document.title === 'App'){
+          document.title = `(${message}) New Messages`;
+          
+        }else{
+          document.title = 'App';
+        }
+      }, 1000);
+
+      
+    }
+
+
+    document.querySelector('.js-remove-btn').addEventListener('click', ()=>{
+      if(message > 0){
+        message-- ;
+
+      }
+      
+      if(message === 0){
+        stopNotification();
+      }
+    });
+
+
+    function stopNotification(){
+      isDisplayNotification = false;
+
+      clearInterval(intervalId);
+      document.title = 'App';
+    }
+
+    
+    // j
+    const multiply = (num1, num2) =>{
+      // console.log(num1 * num2);
+
+      // or
+      return num1 * num2;
+    };
+
+    console.log(multiply(2, 3)); // 6
+    console.log(multiply(2, 5)); // 10
+
+
+    // k
+    const multiply2 = (num1 , num2) => num1 * num2;  // not need of curly brackets
+    console.log(multiply2(2, 6));  // 12 
+
+    //l
+    
+    const countPositive = (nums) =>{
+      let count = 0;
+      nums.forEach((num) => {
+        if(num > 0){
+          count++ ;
+        }
+
+      });
+      
+      return count;
+    };
+
+    console.log(countPositive([1, -2, 3, -6, 7]));  // 3
+    console.log(countPositive([1, -2, 3, -6, -7, 0, 3]));  // 3
+
+
+    // m
+
+    function addNum(nums, add){
+      return nums.map((num) => num + add);
+    }
+
+    console.log(addNum([1, 2, 3], 2));  // [3, 4, 5]
+    console.log(addNum([-2, -1, 0, 99], 2));  // [0, 1, 2, 101]
+
+    //n
+    function removeEgg(food){
+      return food.filter((value) => value !== 'egg');
+    }
+
+    console.log(removeEgg(['egg', 'jam', 'bun', 'egg']));  // ['jam', 'bun']
+
+    // o
+    function removeEgg2(foods){
+      let count = 0;
+      return foods.filter((food) => {
+        if(food === 'egg' && count < 2){
+          count ++;
+          return false;
+        }
+
+        return true;
+      }); 
+    }
+
+    console.log(removeEgg2(['egg', 'apple', 'egg', 'egg', 'jam']));   // ['apple', 'egg', 'jam']
+
+    // challenge
+
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11 - exercise part 2</title>
+</head>
+<body>
+  
+  
+  <script>
+    /*
+    function findString(array, string){
+      let count = 0;
+      for(let i = 0 ; i < array.length ; i++){
+
+        if(array[i] === string){
+          console.log(i);
+          count++ ;
+        }
+
+      }
+
+      if(count === 0 ){
+        console.log(-1);
+      }
+    }
+
+    findString(['hii', 'whatsup', 'hello', 'some'], 'hello');
+    findString(['hii', 'not'], 'hello');
+    findString(['hii', 'not', 'hello'], 'hello');
+    findString(['hii', 'not'], 'hello');
+    */ 
+
+    /*
+    function removeEgg(food, item){
+
+      let result = [];
+      for(let i = 0 ; i < food.length ; i++){
+
+        if(food[i] === item){
+          continue;
+        }
+
+        // if(food[i] != item){
+        //   result.push(food[i]);
+        // }
+
+        result.push(food[i]);
+      }
+      
+      return result;
+    }
+
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'jam'], 'egg'));
+    */
+
+    /*
+    // remove the first 2 egg.
+    function removeEgg(food, item){
+      let count = 0;
+      let result = [];
+      for(let i = 0 ; i < food.length ; i++){
+
+        if(food[i] === item && count < 2){
+          count ++;
+          continue;
+        }
+
+        result.push(food[i]);
+      }
+
+      return result;
+    } 
+
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'jam'], 'egg'));
+    */
+
+    /*
+    // using of .reverse() method 
+    function removeEgg(food, item){
+      const reverseFood = food.reverse();
+      console.log(reverseFood);
+      let count = 0;
+      let result = [];
+      for(let i = reverseFood.length - 1 ; i >= 0 ; i--){
+
+        if(reverseFood[i] === item && count < 2){
+          count ++;
+          continue;
+        }
+
+        result.push(food[i]);
+      }
+
+      return result;
+    } 
+
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'jam'], 'egg'));
+    */
+
+    for(let i = 1 ; i <= 20 ; i++){
+      if(i%3 === 0 && i%5 === 0){
+        console.log('FizzBuzz');
+
+      }else if(i%3 === 0){
+        console.log('Fizz');
+
+      }else if(i%5 === 0){
+        console.log('Buzz');
+
+      }else{
+        console.log(i);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10e - exercise</title>
+
+  <style>
+    .btn{
+      background-color: black;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .is-toggled{
+      background-color: rgb(230, 230, 230);
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="btn js-game-btn" onclick="isToggled('.js-game-btn')">Gaming</button>
+  <button class="btn js-music-btn" onclick="isToggled('.js-music-btn')">Music</button>
+  <button class="btn js-tech-btn" onclick="isToggled('.js-tech-btn')">Tech</button>
+
+  <script>
+
+    function isToggled(selector){
+      const btn = document.querySelector(selector);
+
+      if(!btn.classList.contains('is-toggled')){
+        btn.classList.add('is-toggled');
+
+      }else{
+        btn.classList.remove('is-toggled');
+      }
+    }
+
+
+    /*
+    function gameBtn(){
+      const GameBtn = document.querySelector('.js-game-btn');
+      
+      if(GameBtn.innerText === 'Gaming'){
+        GameBtn.classList.toggle('is-toggled');
+
+      }
+    }
+    
+    function musicBtn(){
+      const musicBtn = document.querySelector('.js-music-btn');
+      if(musicBtn.innerText === 'Music'){
+        musicBtn.classList.toggle('is-toggled');
+
+      }
+
+      // if (!musicBtn.classList.contains('is-toggled')) {
+      //   button.classList.add('is-toggled');
+      // } else {
+      //   button.classList.remove('is-toggled');
+      // }
+    }
+
+    function techBtn(){
+      const techBtn = document.querySelector('.js-tech-btn');
+      if(techBtn.innerText === 'Tech'){
+        techBtn.classList.toggle('is-toggled');
+
+      }
+    }
+    */
+
+
+
+  </script>
+</body>
+</html>

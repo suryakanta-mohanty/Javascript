@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 - exercise d</title>
+
+  <style>
+    .game-btn{
+      padding: 10px 20px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+
+    }
+
+    .is-toggled{
+      background-color: rgb(230, 230, 230);
+      color: black;
+    }
+
+
+  </style>
+</head>
+<body>
+  <p>Gaming mode</p>
+  <button class="game-btn js-game-btn" onclick="gameMode()">Game On</button>
+
+  <script>
+    function gameMode(){
+      const jsGameBtn = document.querySelector('.js-game-btn');
+
+      
+      if(jsGameBtn.innerText === 'Game On'){
+        jsGameBtn.innerHTML = 'Game Off';
+        jsGameBtn.classList.add('is-toggled');
+
+      }else{
+        jsGameBtn.innerHTML = 'Game On';
+        jsGameBtn.classList.remove('is-toggled');
+      }
+      
+
+
+    }
+  </script>
+</body>
+</html>

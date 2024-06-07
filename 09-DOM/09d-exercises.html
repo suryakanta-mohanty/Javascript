@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9c - exercises</title>
+</head>
+<body>
+
+  <input type="text" class="input-box" onkeydown="handlekey(event)" placeholder="enter your name">
+  <button onclick="submitBtn()">Submit</button>
+
+  <p class="js-name"></p>
+
+
+  <script>
+    const inputBox = document.querySelector('.input-box');
+
+    function submitBtn(){
+      if(inputBox.value === ''){
+        alert('Please, Enter your name first.');
+
+      }else{
+        document.querySelector('.js-name').innerHTML = `Your name is: ${inputBox.value}`;
+      }
+
+      inputBox.value = '';
+    }
+
+    function handlekey(event){
+      if(event.key === 'Enter'){
+        submitBtn();
+      }
+    }
+  </script>
+</body>
+</html>

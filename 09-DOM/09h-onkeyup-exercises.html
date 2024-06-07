@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09h - onkeyup</title>
+</head>
+<body>
+  
+  <input type="text" class="input-box" onkeyup="handleKey(event)" placeholder="enter something">
+  <p class="js-text"></p>
+  <script>
+    
+
+    function handleKey(){
+      const inputText = document.querySelector('.input-box')  ;
+      document.querySelector('.js-text').innerHTML = inputText.value;
+    }
+  </script>
+</body>
+</html>
