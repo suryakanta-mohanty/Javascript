@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>generator example</title>
+</head>
+<body>
+
+  <p>Open <code>console</code> to see the output</p>
+
+  <script>
+
+    // Let's create a magical counting book that counts numbers for you.
+    function* countNumber(){
+      yield 1;
+      yield 2;
+      yield 3;
+      yield 4;
+      yield 5;
+      
+    }
+
+    let counter = countNumber();
+
+    console.log(counter.next().value); // 1
+    console.log(counter.next().value); // 2
+    console.log(counter.next().value); // 3
+    console.log(counter.next().value); // 4
+    console.log(counter.next().value); // 5
+
+    // Now, let's make a book that tells you the days of the week.
+
+    function *daysOfWeek(){
+      
+      yield 'Sunday';
+      yield 'Monday';
+      yield 'Tuesday';
+      yield 'Wednesday';
+      yield 'Thursday';
+      yield 'Friday';
+      yield 'Saturday';
+    }
+
+    let days = daysOfWeek();
+
+    console.log(days.next().value); // Sunday
+    console.log(days.next().value); // Monday
+    console.log(days.next().value); // Tuesday
+    console.log(days.next().value); // Wednesday
+    console.log(days.next().value); // Thursday
+    console.log(days.next().value); // Friday
+    console.log(days.next().value); // Saturday
+
+
+    // gives you even numbers.
+
+    function *evenNumber(){
+      let num = 0;
+      while(true){
+        yield num;
+        num += 2;
+      }
+    }
+
+    let evens = evenNumber();
+
+    console.log(evens.next().value); // 0
+    console.log(evens.next().value); // 2
+    console.log(evens.next().value); // 4
+    console.log(evens.next().value); // 6
+    console.log(evens.next().value); // 8
+    console.log(evens.next().value); // 10
+
+
+    // gives you the Fibonacci sequence.
+
+    function *fibonacci(){
+      let a = 0 , b = 1;
+      while(true){
+        yield a;
+        [a, b] = [b, b+a];
+      }
+    }
+
+    let fiboSeries = fibonacci();
+
+    console.log(fiboSeries.next().value); // 0
+    console.log(fiboSeries.next().value); // 1
+    console.log(fiboSeries.next().value); // 1
+    console.log(fiboSeries.next().value); // 2
+    console.log(fiboSeries.next().value); // 3
+    console.log(fiboSeries.next().value); // 5
+    console.log(fiboSeries.next().value); // 8
+
+
+    // Recap
+    // 1. Generator Function: A special function that can pause and resume.
+    // 2. Yield: A keyword to pause and give a value.
+    // 3. next(): A method to move to the next part of the generator function.
+    
+  </script>
+</body>
+</html>

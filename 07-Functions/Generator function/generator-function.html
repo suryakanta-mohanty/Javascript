@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>generator function</title>
+</head>
+<body>
+  
+
+  <script>
+    // In JavaScript, a generator function is like this magical storybook. 
+    // You can pause it and resume it whenever you want. Here's how it looks:
+
+    // 1. function*: The `*` after `function` means it's a special kind of function, a generator.
+    // 2. yield: This is like saying, "pause here and give this part of the story."
+    function* storyBook(){
+      yield 'Once upon a time...'
+      yield 'there was a brave kinght...'
+      yield 'who saved the kingdom!'
+    }
+
+    let story = storyBook();
+    
+    console.log(story.next().value);  // Once upon a time...
+    console.log(story.next());  // {value: 'there was a brave kinght...', done: false}
+
+    console.log(story.next().value);  // there was a brave kinght...
+    console.log(story.next().value);  // who saved the kingdom!
+    console.log(story.next());  // {value: undefined, done: true}
+
+
+    // `storyBook()` gives us the magical storybook (a generator object).
+    // `story.next().value` reads the next part of the story.
+
+    // Every time you call `next()`, the storybook opens and reads the next part, 
+    // then stops until you call `next()` again.
+
+  </script>
+</body>
+</html>
