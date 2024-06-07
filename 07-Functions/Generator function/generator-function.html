@@ -43,6 +43,22 @@
     // Every time you call `next()`, the storybook opens and reads the next part, 
     // then stops until you call `next()` again.
 
+
+
+    // generator as an object property
+
+    const someObj = { *generator(){
+      yield 'a';
+      yield 'b';
+    }};
+
+    const gen = someObj.generator();
+
+    console.log(gen.next()); // {value: 'a', done: false}
+    console.log(gen.next().value); // b
+    console.log(gen.next()); // {value: undefined, done: true}
+
+    
   </script>
 </body>
 </html>
