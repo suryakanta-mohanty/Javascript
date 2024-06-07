@@ -17,7 +17,8 @@
   
   <script type="module">
     import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
-    import {isWeekend} from './isWeekend.js';
+    // import {isWeekend} from './isWeekend.js';
+    import isSatSun from './isWeekend.js';
 
     // 7 days from today
     let today = dayjs();
@@ -60,6 +61,7 @@
     console.log(isWeekend(today));
     */
 
+    /*
     // move isWeekend to another file.
     console.log(today.format('dddd, MMMM D'));
     console.log(isWeekend(today));
@@ -75,6 +77,26 @@
     today = dayjs().add(6, 'day');
     console.log(today.format('dddd, MMMM D'));
     console.log(isWeekend(today));
+    */
+
+    
+    // 'import isWeekend', change the name to something else like 'import isSatSun' and use this
+    // new name to run the function.
+    console.log(today.format('dddd, MMMM D'));
+    console.log(isSatSun(today));
+
+    today = dayjs().add(2, 'day');
+    console.log(today.format('dddd, MMMM D'));
+    console.log(isSatSun(today));
+
+    today = dayjs().add(4, 'day');
+    console.log(today.format('dddd, MMMM D'));
+    console.log(isSatSun(today));
+
+    today = dayjs().add(6, 'day');
+    console.log(today.format('dddd, MMMM D'));
+    console.log(isSatSun(today));
+    
 
     // 
   </script>
