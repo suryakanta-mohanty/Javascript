@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15 exercise</title>
+
+  <style>
+    
+    p code{
+      color: brown;
+    }
+  </style>
+</head>
+<body>
+  <p>open the <code>console</code> page to see the output</p>
+  
+  <script type="module">
+    import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+
+
+    // 7 days from today
+    const today = dayjs();
+    const Seven_day = today.add(7, 'day');
+
+    console.log(Seven_day.format('MMMM D'));
+
+    // 1 month from today
+    // const monthDay = today.add(30, 'days');
+    const monthDay = today.add(1, 'month');
+    console.log(monthDay.format("MMMM D"));  
+
+    // .subtract() - it will calculate time before the today's time.
+    const prevOneMonth = today.subtract(1, 'month');
+    console.log(prevOneMonth.format('MMMM D'));
+
+    //
+  </script>
+</body>
+</html>
