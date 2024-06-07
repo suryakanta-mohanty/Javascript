@@ -99,6 +99,31 @@
     // 2. Yield: A keyword to pause and give a value.
     // 3. next(): A method to move to the next part of the generator function.
     
+
+
+    // You can also send a value with `next(value)` into the generator
+
+    function* counterStep(value){
+      while(true){
+        const step = yield value++;
+
+        if(step){
+          value += step;
+        }
+      }
+    }
+
+    let generatorFun = counterStep(0);
+
+    console.log(generatorFun.next().value); // 0
+    console.log(generatorFun.next().value); // 1
+    console.log(generatorFun.next().value); // 2
+    console.log(generatorFun.next().value); // 3
+    console.log(generatorFun.next(10).value); // 14
+    console.log(generatorFun.next().value); // 15
+    console.log(generatorFun.next(20).value); // 36
+
+    
   </script>
 </body>
 </html>
