@@ -20,7 +20,7 @@
 
 
     // 7 days from today
-    const today = dayjs();
+    let today = dayjs();
     const Seven_day = today.add(7, 'day');
 
     console.log(Seven_day.format('MMMM D'));
@@ -33,6 +33,31 @@
     // .subtract() - it will calculate time before the today's time.
     const prevOneMonth = today.subtract(1, 'month');
     console.log(prevOneMonth.format('MMMM D'));
+
+    // in the format <day of week>
+    console.log(today.format('dddd')); 
+
+    // using dayjs in a function
+    function isWeekend(date){
+      const dayOfWeek = date.format('dddd');
+      return dayOfWeek === 'Saturday' || dayOfWeek === 'Sunday';
+    }
+
+    console.log(today.format('dddd, MMMM D'));
+    console.log(isWeekend(today));
+
+    today = dayjs().add(2, 'day');
+    console.log(today.format('dddd, MMMM D'));
+    console.log(isWeekend(today));
+
+    today = dayjs().add(4, 'day');
+    console.log(today.format('dddd, MMMM D'));
+    console.log(isWeekend(today));
+
+    today = dayjs().add(6, 'day');
+    console.log(today.format('dddd, MMMM D'));
+    console.log(isWeekend(today));
+
 
     //
   </script>
